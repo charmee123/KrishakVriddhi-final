@@ -1,0 +1,68 @@
+body {
+  font-family: "Montserrat";
+  background-color: rgb(235, 250, 245);
+}
+
+h1 {
+  font-family: "Montserrat-Bold";
+  font-weight: bold;
+  font-size: 3em;
+   
+}
+
+/* .button1{
+  position: relative;
+  left: 60%;
+  transform: translatex(-50%);
+} */
+
+.featurette-heading {
+  color: rgb(7, 66, 7);
+}
+
+span {
+  color: rgb(7, 107, 7);
+}
+
+h2 {
+  font-family: "Montserrat-Bold";
+  font-weight: bold;
+  font-size: 2em;
+}
+
+.white-section {
+  text-align: center;
+  background-color: #395144;
+  color: #fff;
+  margin-top: 100px;
+  padding: 50px 0 16px 0;
+}
+
+.help {
+  text-align: right;
+  margin-right: 20px;
+  font-size: 1em;
+}
+
+.social-icon {
+  margin: 20px 10px;
+}
+
+.middle-container {
+  margin-top: 80px;
+  margin-right: 100px;
+  margin-left: 100px;
+}
+
+.middle-container-img {
+  height: 300px;
+  width: 100%;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.body-content {
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+

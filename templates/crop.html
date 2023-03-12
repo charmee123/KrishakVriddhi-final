@@ -1,0 +1,232 @@
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <link rel="icon" type="image/png" sizes="32x32" href="/static/images/favicon.png">
+</head>
+
+<style>
+  body {
+    background: url('/static/images/crop_background.jpg');
+    background-size: cover;
+    font-family: 'Verdana';
+    margin-top: 20px;
+    padding-top:30px;
+  }
+</style>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" id="navbar">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Krishak Vriddhi🍃</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item">
+              <a class="nav-link " aria-current="page" href="{{ url_for('home')}}">Home</a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Prediction
+              </a>
+              
+              <ul class="dropdown-menu">
+              
+                <li><a class="dropdown-item" href="{{url_for('crop_recommend')}}">Crops</a></li>
+              
+                <li><a class="dropdown-item" href="{{url_for('fertilizer_recommend')}}">Fertilizers</a></li>
+
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Remind Me
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="{{url_for('spraying')}}">Spraying</a></li>
+                <li><a class="dropdown-item" href="{{url_for('schedule')}}">Schedule Event</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{url_for('weather')}}">Weather</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{url_for('contact')}}">Contact us</a>
+            </li>
+          </ul>
+          <div id="google_translate_element"></div>
+        <script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}
+</script>
+          <button type="button" class="btn btn-outline-light  my-2 mx-2" id="closeNav">Set Navbar</button>
+            <script>
+                   document.querySelector('#google_translate_element').addEventListener('click', margin_top)
+              function margin_top(){
+                document.getElementById("navbar").style.marginTop = "40px";
+              }
+              document.querySelector('#closeNav').addEventListener('click',margin_cancel)
+              function margin_cancel(){
+                document.getElementById("navbar").style.marginTop="0";
+              }
+              
+      
+    </script>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!--Form Section-->
+  <br /><br />
+  <h2 style="text-align: center; margin-top: 10px;  font-size:2.2rem; color:#541212; ">
+    <b >FIND OUT THE MOST SUITABLE CROP TO GROW IN YOUR FARM🌾</b>
+  </h2>
+  <br />
+
+  <div
+    style="
+      width: 1000px;
+      height: 50rem;
+      margin: 0px auto;
+      color: black;
+      border-radius: 25px;
+      padding: 20px 20px;       
+      
+    "
+  >
+    <form method="POST" action="{{ url_for('crop_prediction') }}">
+      <div class="form-group">
+        <label for="Nitrogen" style="font-size: 20px"><b>Level of Nitrogen in the field: </b></label>
+        <input
+          type="number"
+          class="form-control"
+          id="Nitrogen"
+          name="nitrogen"
+          placeholder="Enter the value(in number) "
+          style="font-weight: bold"
+          required
+        />
+      </div>
+      <br>
+      <div class="form-group">
+        <label for="Phosphorous" style="font-size: 20px"
+          ><b>Level of Phosphorous in the field:</b></label
+        >
+        <input
+          type="number"
+          class="form-control"
+          id="Phosphorous"
+          name="phosphorous"
+          placeholder="Enter the value(in number) "
+          style="font-weight: bold"
+          required
+        />
+      </div>
+      <br>
+      <div class="form-group">
+        <label for="Pottasium" style="font-size: 20px"><b>Level of Pottasium in the field:</b></label>
+        <input
+          type="number"
+          class="form-control"
+          id="Pottasium"
+          name="pottasium"
+          placeholder="Enter the value(in number) "
+          style="font-weight: bold"
+          required
+        />
+      </div>
+      <br>
+      <div class="form-group">
+          <label for="temperature" style="font-size: 20px"><b>Temperature around the field: </b></label>
+          <input
+            type="number"
+            class="form-control"
+            id="temp"
+            name="temperature"
+            placeholder="Enter the value(in celcius) "
+            style="font-weight: bold"
+            required
+          />
+      </div>
+      <br>
+      <div class="form-group">
+          <label for="humidity" style="font-size: 20px"><b>Humidity of the field  : </b></label>
+          <input
+            type="number"
+            class="form-control"
+            id="humidity"
+            name="humidity"
+            placeholder="Enter the value(in %)"
+            style="font-weight: bold"
+            required
+          />
+      </div>
+      <br>
+      <div class="form-group">
+        <label for="ph" style="font-size: 20px"><b>ph level of the soil: </b></label>
+        <input
+          type="number"
+          step="0.01"
+          class="form-control"
+          id="ph"
+          name="ph"
+          placeholder="Enter the value(in number)"
+          style="font-weight: bold"
+          required
+        />
+      </div>
+      <br>
+      <div class="form-group">
+        <label for="Rainfall" style="font-size: 20px"
+          ><b>Rainfall level around the field (in mm)</b></label
+        >
+        <input
+          type="number"
+          step="0.01"
+          class="form-control"
+          id="Rainfall"
+          name="rainfall"
+          placeholder="Enter the value(in mm)"
+          style="font-weight: bold"
+          required
+        />
+      </div>
+      <br>
+
+      <div class="d-flex justify-content-center ">
+        <button
+          type="submit"
+          class="btn btn-info"
+          style="
+            color: black;
+            font-weight: bold;
+            width: 130px;
+            height: 50px;
+            border-radius: 12px;
+            font-size: 21px;
+            
+            
+          "
+        >
+          Predict
+        </button>
+      </div>
+      
+    </form>
+    <div class="container py-2 mx-auto my-50 h-10 " >
+      <div class="row">
+          <div class="col-sm py-2 py-md-3">
+              <div class="card card-body" style="justify-content: center; color:#850000">
+                  <h1 class="text-center"><b>Crop you should grow in your farm is: <i>{{ prediction }} </i></b></h1>
+              </div>
+          </div>
+        </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>

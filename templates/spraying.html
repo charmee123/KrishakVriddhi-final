@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Spraying</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat|Ubuntu"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/static/images/favicon.png"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/static/css/spraying.css" />
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"
+    ></script>
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" id="navbar">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Krishak Vriddhi🍃</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarCollapse"
+            aria-controls="navbarCollapse"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  aria-current="page"
+                  href="{{url_for('home')}}"
+                  >Home</a
+                >
+              </li>
+
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Prediction
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href=""
+                      >Crops</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="{{url_for('fertilizer_recommend')}}"
+                      >Fertilizers</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle active"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Remind Me
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="{{url_for('spraying')}}"
+                      >Spraying</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="{{url_for('schedule')}}"
+                      >Schedule Event</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{url_for('weather')}}">Weather</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{url_for('contact')}}">Contact us</a>
+              </li>
+            </ul>
+            <div id="google_translate_element"></div>
+        <script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}
+</script>
+            <button type="button" class="btn btn-light  my-2 mx-2" id="closeNav">Set Navbar</button>
+            <script>
+                   document.querySelector('#google_translate_element').addEventListener('click', margin_top)
+              function margin_top(){
+                document.getElementById("navbar").style.marginTop = "40px";
+              }
+              document.querySelector('#closeNav').addEventListener('click',margin_cancel)
+              function margin_cancel(){
+                document.getElementById("navbar").style.marginTop="0";
+              }
+              
+      
+    </script>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div class="top-container"></div>
+
+    <div class="middle-container mx-4 my-2">
+      <img
+        src="/static/images/spraying1.jpeg"
+        class="image_spraying rounded mx-auto d-block"
+        alt="..."
+      />
+      <p>
+        Any substance or combination of substances that is intended to harm or
+        interfere with the production, processing, storage, transport, or
+        marketing of food, agricultural commodities, wood and wood products, or
+        animal feedstuffs, or substances that may be administered to animals for
+        the control of insects, arachnids, or other pests, including unwanted
+        species of plants or animals, vectors of human or animal disease, or
+        unwanted species of plants or animals.
+      </p>
+      <h1>Types of Pesticides</h1>
+      <h2>Herbicides</h2>
+      <p>
+        Herbicides stop the growth of weeds that can rob crops of the nutrients
+        they need to grow. Furthermore, among the chemicals used as herbicides
+        in agriculture are 2,4-D, Clethodim, Glyphosate, Bentazon, and
+        Clethodim.
+      </p>
+      <br />
+      <h2>Insecticides</h2>
+      <p>
+        Insecticides, as the name implies, target the nervous system of insects
+        to prevent them from inhibiting or reproducing. Among the chemicals used
+        as insecticides include organophosphate, carbamates, nicotinoids,
+        fumigants, and biological.
+      </p>
+      <br />
+      <h2>Fungicides</h2>
+      <p>
+        Fungicides aid in totally eliminating fungi by preventing their growth.
+        Additionally, they quickly decompose in soil with air present. A few
+        forms of insecticides that are also employed as fungicides include
+        maneb, nabam, and cycloheximide.
+      </p>
+      <br />
+      <h2>Rodenticides</h2>
+      <p>
+        They are chemicals that are used to keep rodent populations under
+        control, including fish, birds, and mammals that can damage crops as
+        well as rats, mice, and gophers. Additionally, a few examples of
+        rodenticides include chlorophacinone, diphacinone, brodifacoum, and
+        bromadiolone.
+      </p>
+      <br />
+      <h2>Larvicides</h2>
+      <p>
+        Larvicides are pesticides that prevent vector-borne illnesses like
+        malaria by limiting or controlling mosquito larvae or breeding.
+      </p>
+      <br />
+      <h2>Bactericides</h2>
+      <p>
+        Pesticides eradicate hazardous microorganisms from crops and livestock
+        or prevent their spread.
+      </p>
+      <br />
+      <h2>Molluscicides</h2>
+      <p>
+        pesticides that typically prevent mollusks like snails, slugs, and
+        others from living in an area or from spreading there.
+      </p>
+      <br />
+      <h2>Algaecides</h2>
+      <p>
+        For increased crop output, these herbicides destroy algae or prevent
+        their growth. Now that we have a list of pesticides and their
+        applications, let's explore the persistent and biodegradable pesticide
+        categories.
+      </p>
+      <h1>Fertilizers</h1>
+      <p>
+        Fertilizers are natural or manmade compounds that are used to provide
+        nutrients to plants. It is used to boost crop productivity in
+        agricultural fields. Farmers that engage in agricultural techniques or
+        farming utilise fertiliser on a daily basis to boost crop yield.
+        Fertilizers are items that are required for the improvement of soil and
+        the retention of water for plant growth. It gives plants nutrients like
+        nitrogen, potassium, and phosphorus to help them grow.
+      </p>
+      <h2>Urea</h2>
+      <p>
+        Urea fertilizer, commonly known as 46-0-0, is a simple or straight
+        (single-element) fertilizer that provides the key necessary ingredient
+        nitrogen in ammonic form (NH4+). Urea can be administered to the soil as
+        solid granules, prills, or pellets. Urea fertilizer contains nitrogen,
+        which promotes root growth. It aids in the formation of plant leaves,
+        stalks, and stems. Urea fertilizer gives plants a dark green color by
+        creating chlorophyll. Aids in the growth of fruit, including the
+        creation of immature fruit. In plants, it aids in the creation of
+        carbohydrates and proteins. It also boosts the rate of absorption of all
+        other necessary plant elements.
+        <b
+          >If you want to know more about urea, you can go through
+          <a
+            href="https://www.cropsreview.com/urea-fertilizer/#:~:text=General%20Information%20and%20Practices%20in%20Urea%20Fertilizer%20Application,is%20likewise%20the%20most%20widely%20used%20fertilizer%20worldwide"
+            >this.</a
+          ></b
+        >
+      </p>
+      <h2>DAP</h2>
+      <p>
+        The full name of DAP fertiliser is Diamonimum Phosphate, and it is a
+        popular fertiliser among farmers. It has a great nutritional value and
+        is often used by farmers. The DAP is a great phosphate and nitrogen
+        source. DAP has an alkaline pH and quickly dissolves in soil, releasing
+        phosphate and ammonium for the plants. The DAP should not be used too
+        close to the roots since the ammonium release might harm the seedlings
+        and plant roots, and damage occurs when the pH exceeds 7. DAP is a great
+        source of nitrogen that will be progressively transformed into nitrate
+        by soil bacteria, resulting in a brief rise in pH. With adequate
+        management, the differences in DAP and Monoammonium Phosphate are
+        negligible or there is no change in plant development and yield owing to
+        Phosphorous source. DAP is also used as a fire retardant on bushfires
+        and other forest fires. After the fire is out, this becomes a nutrition
+        source.
+        <b
+          >If you want to know more about urea, you can go through
+          <a
+            href="https://www.agrisolutionland.com/dap-fertilizer/#:~:text=Advantages%20of%20the%20Fertilizer%201%20DAP%20fertilizer%20is,soil%20microorganisms%2C%20resulting%20in%20a%20pH%20decrease.%20"
+            >this.</a
+          ></b
+        >
+      </p>
+      <h2>14-35-14</h2>
+      <p>
+        14-35-14 is a complex fertiliser that contains all of the major
+        nutrients, including nitrogen, phosphorus, and potassium. It is a
+        compound that is good for all soils because it is neutral in nature and
+        does not leave any acidity or alkalinity in the soil. It is an excellent
+        and appropriate complex for all crops for basal application. 14-35-14 is
+        an excellent complex for rice, cotton, peanuts, chiles, soya bean,
+        potato, and other commercial crops that require a high initial Phosphate
+        level.<b
+          >If you want to know more about 14-35-14, you can go through
+          <a
+            href="https://indiaagronet.com/indiaagronet/technology_upd/contents/gromor.htm#:~:text=Gromor%2014%2D35%2D14%2C,amongst%20all%20NPK%20complex%20fertilisers"
+            >this.</a
+          ></b
+        >
+      </p>
+      <h2>20-20-20</h2>
+      <p>
+        The water-soluble fertiliser NPK 20-20-20 has a nitrogen (N), phosphorus
+        (P), and potassium (K) balance of 20:20:20. It contains magnesium as
+        well as trace elements. It is made with high-quality nutrients,
+        resulting in high solubility and flawless assimilation. It supports
+        constant development and compactness, preventing deficiencies or
+        nutritional imbalances. Its balanced content of 1: 1: 1 is excellent for
+        a wide variety of plants at practically every stage of development and
+        can be used in a continuous or periodic manner, alternating with water
+        or rain.<b
+          >If you want to know more about 20-20-20, you can go through
+          <a href="https://www.evergreenseeds.com/20-20-20-fertilizer/"
+            >this.</a
+          ></b
+        >
+      </p>
+      <h2>14-14-14</h2>
+      <p>
+        14-14-14 fertiliser is used to provide a healthy boost to plants such as
+        lawns, vegetables, flowers, and potted plants during the growing season.
+        It includes the same proportions of nitrogen, phosphorus, and potassium
+        as lower NPK fertilisers (14% N, 14% P, and 14% K). It's intended for
+        medium-term crops. It has enough nutrients to feed the plant for three
+        to four months. This constant flow of nutrients results in fantastically
+        uniform crop development.<b
+          >If you want to know more about 14-14-14, you can go through
+          <a href="https://positivebloom.com/14-14-14/">this.</a></b
+        >
+      </p>
+      <h2>10-26-26</h2>
+      <p>
+        10-26-26 is a comprehensive fertiliser that contains all three major
+        plant nutrients: nitrogen, phosphorus, and potassium. Its water-soluble
+        form aids in boosting crop quality and yield. It has a higher content of
+        potassium, which aids in the development of plant immunity. It also
+        increases soil texture and the plant's capacity to absorb nutrients
+        through stronger roots. It boosts plant uptake of nutrients required for
+        healthy plant growth.<b
+          >If you want to know more about 10-26-26, you can go through
+          <a href="https://www.phosagro.com/production/fertilizer/7085/"
+            >this.</a
+          ></b
+        >
+      </p>
+      <h2>28-28</h2>
+      <p>
+        A complex fertiliser combining two important nutrients, Nitrogen at 28%
+        and Phosphorus at 28%, gives crops with rapid and long-term greenness.
+        With 28% nitrogen content, this is the most nitrogen-rich complex
+        fertiliser. It is an excellent fertiliser for crops such as paddy,
+        cotton, chilies, sugarcane, and vegetables.<b
+          >If you want to know more about 28-28, you can go through
+          <a
+            href="https://poorti.net/shop/index.php?id_product=1451&controller=product&id_lang=1"
+            >this.</a
+          ></b
+        >
+      </p>
+    </div>
+
+    <footer class="white-section" id="footer">
+      <div class="container-fluid">
+        <a
+          href=" https://www.facebook.com/profile.php?id=100075233470329"
+          style="color: #fff"
+          ><i class="social-icon fab fa-facebook-f"></i
+        ></a>
+        <a
+          href="https://twitter.com/charmee_gandhi?t=T8C581AP1bgoSTePoBpJPg&s=08"
+          style="color: #fff"
+          ><i class="social-icon fab fa-twitter"></i
+        ></a>
+        <a
+          href="https://instagram.com/technomac1102?igshid=ZDdkNTZiNTM="
+          style="color: #fff"
+          ><i class="social-icon fab fa-instagram"></i
+        ></a>
+        <a href=" mailto:technomac1102@gmail.com" style="color: #fff"
+          ><i class="social-icon fa fa-envelope"></i
+        ></a>
+        <p>© Copyright 2023 Krishak Vriddhi🍃</p>
+        <p><a href="#" style="color: yellow">Back to top</a></p>
+      </div>
+      <p class="help">
+        <a href="{{ url_for('guide')}}" style="color: yellow">User's guide</a>
+      </p>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  </body>
+</html>
